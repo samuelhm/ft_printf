@@ -1,10 +1,4 @@
-# Personales
-*.back
 *.swp
-*.out
-*.txt
-./libft
-./libft/*
 # Prerequisites
 *.d
 
