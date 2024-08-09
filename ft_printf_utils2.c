@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:25:05 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:33:52 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 09:53:42 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int ft_putptr(unsigned long nb)
 
 	hx = "0123456789abcdef";
 	if (!nb)
-		return(write(1, '0', 1));
+		return(write(1, "0", 1));
 	if (nb > 15)
 	{
 		return (ft_putptr(nb / 16));
