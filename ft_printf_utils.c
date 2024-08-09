@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 08:23:58 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 10:18:01 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 10:30:16 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_putnbr(int nb)
 		return (write(1, "-2147483648", 11));
 	if (nb < 0)
 	{
-		return (ft_putnbr(nb * -1) + write(1, "-", 1));
+		return (write(1, "-", 1) + ft_putnbr(nb * -1));
 	}
 	if (nb >= 10)
 	{

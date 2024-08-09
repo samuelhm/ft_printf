@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:13:51 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 10:14:27 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 10:30:50 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(char const *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
-			result += printarg(str[i], args);
+			result += printarg(str[++i], args);
 		else
 		{
 			write(1, &str[i], 1);
@@ -49,21 +49,21 @@ int	printarg(char carg, va_list args)
 	else if (carg == 'u')
 		return (ft_putunbr(va_arg(args, unsigned int)));
 	else if (carg == 'x')
-		return (ft_puthxnbr(va_arg(args, unsigned int), 0));
-	else if (carg == 'X')
 		return (ft_puthxnbr(va_arg(args, unsigned int), 1));
+	else if (carg == 'X')
+		return (ft_puthxnbr(va_arg(args, unsigned int), 0));
 	else if (carg == 'p')
 		return (write(1, "0x", 2) + ft_putptr(va_arg(args, unsigned long)));
 	else
 		return (write(1, &carg, 1));
 }
-
 /*
 int	main(void)
 {
 	int		rslt;
 
-	rslt = ft_printf("%p", (void *)14523);
-	printf ("\n%d", rslt);
+	rslt = ft_printf("%d", -1);
+	ft_printf ("\n%d", rslt);
 	return (0);
-}*/
+}
+*/
