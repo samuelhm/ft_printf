@@ -6,13 +6,13 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 08:23:58 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:16:43 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 09:51:37 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int ft_putchar(int c)
 {
 	return (write(1, &c, 1));
 }
