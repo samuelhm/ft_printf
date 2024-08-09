@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:13:51 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:43:06 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 09:44:46 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	printarg(char carg, va_list args)
 	else if (carg == 'X')
 		return (ft_puthxnbr(va_arg(args, unsigned int), 1));
 	else if (carg == 'p')
-		return (ft_putptr(va_arg(args, unsigned long)));
+		return (write(1, "0x", 2) + ft_putptr(va_arg(args, unsigned long)));
 	else
 		return (write(1, &carg, 1));
 }
