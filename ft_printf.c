@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:13:51 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 10:30:50 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 10:52:41 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_printf(char const *str, ...)
 
 int	printarg(char carg, va_list args)
 {
+	unsigned long	p;
+
 	if (carg == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	else if (carg == 's')
@@ -53,17 +55,13 @@ int	printarg(char carg, va_list args)
 	else if (carg == 'X')
 		return (ft_puthxnbr(va_arg(args, unsigned int), 0));
 	else if (carg == 'p')
-		return (write(1, "0x", 2) + ft_putptr(va_arg(args, unsigned long)));
+	{
+		p = va_arg(args, unsigned long);
+		if (p)
+			return (write(1, "0x", 2) + ft_putptr(p));
+		else
+			return (write(1, "(nil)", 5));
+	}
 	else
 		return (write(1, &carg, 1));
 }
-/*
-int	main(void)
-{
-	int		rslt;
-
-	rslt = ft_printf("%d", -1);
-	ft_printf ("\n%d", rslt);
-	return (0);
-}
-*/
