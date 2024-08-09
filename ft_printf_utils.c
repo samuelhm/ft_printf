@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 08:23:58 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:51:37 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 09:52:37 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int ft_putnbr(int nb)
 int ft_putunbr(unsigned int nb)
 {
 	if (nb >= 10)
-		return (ft_putunbrt(nb / 10));
+		return (ft_putunbr(nb / 10));
 	else
 		return (ft_putchar((nb % 10) + 48));
 }
