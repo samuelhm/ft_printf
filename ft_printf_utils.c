@@ -6,33 +6,33 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 08:23:58 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:52:37 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 10:18:01 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(int c)
+int	ft_putchar(int c)
 {
 	return (write(1, &c, 1));
 }
 
-int ft_putstr(const char *str)
+int	ft_putstr(const char *str)
 {
 	int	i;
 
 	if (!str)
-		return(ft_putstr("(null)"));
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (str[i])
 		i++;
 	return (write(1, str, i));
 }
 
-int ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
-		return (write(1, "-2147483648",11));
+		return (write(1, "-2147483648", 11));
 	if (nb < 0)
 	{
 		return (ft_putnbr(nb * -1) + write(1, "-", 1));
@@ -47,7 +47,7 @@ int ft_putnbr(int nb)
 	}
 }
 
-int ft_putunbr(unsigned int nb)
+int	ft_putunbr(unsigned int nb)
 {
 	if (nb >= 10)
 		return (ft_putunbr(nb / 10));

@@ -6,13 +6,13 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:25:05 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 09:55:46 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/08/09 10:18:42 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_puthxnbr(unsigned int nb, int upper)
+int	ft_puthxnbr(unsigned int nb, int upper)
 {
 	char	*hx;
 
@@ -26,13 +26,13 @@ int ft_puthxnbr(unsigned int nb, int upper)
 		return (ft_putchar(hx[nb % 16]));
 }
 
-int ft_putptr(unsigned long nb)
+int	ft_putptr(unsigned long nb)
 {
 	char	*hx;
 
 	hx = "0123456789abcdef";
 	if (!nb)
-		return(write(1, "0", 1));
+		return (write(1, "0", 1));
 	if (nb > 15)
 	{
 		return (ft_putptr(nb / 16));
