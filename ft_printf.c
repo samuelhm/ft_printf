@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shurtado <shurtado@student.42barcelona.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:13:51 by shurtado          #+#    #+#             */
-/*   Updated: 2024/08/09 10:52:41 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:05:53 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	printarg(char carg, va_list args)
 		return (ft_puthxnbr(va_arg(args, unsigned int), 1));
 	else if (carg == 'X')
 		return (ft_puthxnbr(va_arg(args, unsigned int), 0));
+	else if (carg == '%')
+		return (write(1, "%", 1));
 	else if (carg == 'p')
 	{
 		p = va_arg(args, unsigned long);
@@ -63,5 +65,5 @@ int	printarg(char carg, va_list args)
 			return (write(1, "(nil)", 5));
 	}
 	else
-		return (write(1, &carg, 1));
+		return (write(1, "%", 1) + write(1, &carg, 1));
 }

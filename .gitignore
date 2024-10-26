@@ -3,6 +3,7 @@
 *.swp
 *.out
 *.txt
+.vscode
 # Prerequisites
 *.d
 
