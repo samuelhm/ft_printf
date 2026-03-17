@@ -21,7 +21,7 @@ Implementación propia de la función `printf` de la biblioteca estándar de C. 
 - Números enteros sin signo (`%u`)
 - Conversión a hexadecimal minúscula y mayúscula (`%x`, `%X`)
 - Impresión de punteros con formato hexadecimal (`%p`)
-- Símbolo de porcentaje literal(`%%`)
+- Símbolo de porcentaje literal (`%%`)
 - Retorno del número total de caracteres impresos
 - Manejo robusto de casos edge y cadenas NULL
 
@@ -31,7 +31,7 @@ Implementación propia de la función `printf` de la biblioteca estándar de C. 
 |-----------|------------|
 | Lenguaje | C (C99) |
 | Build System | Makefile |
-| Librería | static Library (.a) |
+| Librería | Static Library (.a) |
 | Funciones Clave | `write()`, `va_list`, `va_start`, `va_arg`, `va_end` |
 
 ## Decisiones Técnicas y Arquitectura
